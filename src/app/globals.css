@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-forest: #116b45;
+  --color-primary: #27a765;
+  --color-sky: #249cf4;
+  --color-sky-light: #eaf6ff;
+  --color-bg: #f6f9f7;
+  --color-ink: #18352b;
+
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Leaflet container must have explicit height from parent */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #eef3f0;
+  font-family: var(--font-sans);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+}
+
+.gl-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.gl-scrollbar::-webkit-scrollbar-thumb {
+  background: #c9ddd1;
+  border-radius: 999px;
+}
+
+@keyframes gl-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.gl-live-dot {
+  animation: gl-pulse 2s ease-in-out infinite;
+}
